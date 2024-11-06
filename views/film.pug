@@ -1,0 +1,32 @@
+
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Film 
+    link(rel="stylesheet", type="text/css", href="/css/style.css")
+    link(href="https://fonts.googleapis.com/css?family=Open+Sans:300", rel="stylesheet", type="text/css")
+  body
+  div.movie-card
+    img.poster(src=img, alt=Poster of ${title})
+    .movie-details
+      h2.movie-title #{title}
+      p.movie-year Año: #{year}
+      p.movie-genre Género: #{genre}
+      p.movie-director Director: #{director}
+      p.movie-plot Descripción: #{description}
+
+      a(href="/") 
+        button Return
+    
+
+//- Esta plantilla tiene distintos etiquetas (img, h2, p) que reciben los valores que recoge nuestra funcion getfilms. getfilms devuelve un objeto con 
+//- esta estructura y introduce los valores dentro de las #{llavesConHastag}
+//- { 
+//-     title: data.Title,              
+//-     year: data.Year,               
+//-     img: data.Poster,
+//-     director: data.Director,
+//-     genre: data.Genre,
+//-     description: data.Plot
+//- }
